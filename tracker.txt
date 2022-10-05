@@ -1,0 +1,14 @@
+cube
+oxyale
+ship
+canoe
+bridge
+canal
+waterorb
+earthorb
+lefein-slab
+bottle
+adamant
+matoya
+elfPrince
+tnt
