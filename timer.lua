@@ -1,4 +1,4 @@
-timer = {on=true,x=199,y=1,w=58,h= 7,value=0}
+timer = {on=false,x=199,y=1,w=58,h= 7,value=0}
 
 gui.defaultPixelFont = "gens"
 gui.defaultPixelFont = "gens"
