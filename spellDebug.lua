@@ -1,5 +1,0 @@
-function spellPreview()
-
-
-
-end

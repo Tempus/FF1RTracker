@@ -83,8 +83,8 @@ function checkItems()
     	getItemStatus("tail", 0x602D , 1)
     end
     
-    if not getItemFlagStatus("bottle", 0x6213 , 2, 2) then
-        getItemStatus("bottlePopped", 0x602F , 1)
+    if not getItemFlagStatus("bottlePopped", 0x6213 , 2, 2) then
+        getItemStatus("bottle", 0x602F , 1)
     end
 
     if not getItemFlagStatus("astos", 0x6207 , 2, 2) then
