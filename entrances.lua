@@ -54,7 +54,7 @@ function markEntrances()
 	cur_map = memory.readbyte(0x48) + 1
  
  	if isEndDestination(cur_map) then
-		SavedEntrances[last_EntranceID][cur_map] = true
+		SavedEntrances[OverworldLocations[last_EntranceID]][DestinationMap[cur_map]] = true
 	end
 end
 
@@ -75,22 +75,17 @@ function printEntrancesToMap()
 		if inner ~= {} then
 			i = 0
 			for endName,exists in pairs(inner) do
-				if inner <= 8 then -- Town Endpoint, let's put it on the right side of the screen
-					gui.text(128,8*townIndex+2, string.format("%-8s -> %8s", string.sub(OverworldLocations[ow],1,8), string.sub(DestinationMap[endName],1,8)))
-
-					townIndex = townIndex + 1
+				if i == 0 then
+					gui.text(0,8*index+2, string.format("%-8s -> %8s", string.sub(ow,1,8), string.sub(endName,1,8)))
+					i = i + 1
 				else
-					if i == 0 then
-						gui.text(1,8*index+2, string.format("%-8s -> %8s", string.sub(OverworldLocations[ow],1,8), string.sub(DestinationMap[endName],1,8)))
-						i = i + 1
-					else
-						gui.text(1,8*index+2, string.format("%-8s -> %8s", " ", string.sub(DestinationMap[endName],1,8)))
-					end
-					index = index + 1
+					gui.text(0,8*index+2, string.format("%-8s -> %8s", " ", string.sub(endName,1,8)))
 				end
+				index = index + 1
 			end
 		end
 	end
+
 end
 
 memory.registerexec(0xBCAB, printEntrancesToMap)
